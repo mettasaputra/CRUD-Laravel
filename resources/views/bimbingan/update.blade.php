@@ -73,6 +73,12 @@
         </div>
     </div>
     <div class="form-group row">
+        <label class="col-form-label col-sm-2 pt-0">Tanggal Bimbingan</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" value="{{Date("d-m-Y H:i")}}" readonly>
+        </div>
+    </div>
+    <div class="form-group row">
         <label class="col-form-label col-sm-2 pt-0">Materi Bimbingan</label>
         <div class="col-sm-10">
             <textarea name="materi_bimbingan" class="form-control">{{$bimbingan->materi_bimbingan}}</textarea>

@@ -32,11 +32,10 @@ class CekStatus
             if (!$request->is('bimbingan/*') && !$request->is('bimbingan')) {
                 return redirect('bimbingan');
             }
+        } elseif (isset($domain[1]) && $domain[1] != "mdp.ac.id") {
+            Auth::logout();
+            return redirect("/login")->with("status", "Anda tidak memiliki izin untuk mengakses Universitas ABCD!");
         }
-        // } elseif (isset($domain[1]) && $domain[1] != "mdp.ac.id") {
-        //     Auth::logout();
-        //     return redirect("/login")->with("status", "Anda tidak memiliki izin untuk mengakses Universitas ABCD!");
-        // }
 
         return $next($request);
     }
